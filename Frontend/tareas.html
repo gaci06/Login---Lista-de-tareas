@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="verificarLogin()">
+  <div class="container">
+    <header>
+      <h2>Mis Tareas</h2>
+      <button onclick="logout()">Cerrar Sesión</button>
+    </header>
+
+    <section class="task-columns">
+      <div id="pending" class="task-column">
+        <button id="btnAgregarTarea">Agregar Tarea</button>
+        <h3>Pendientes</h3>
+        <div class="task-list"></div>
+      </div>
+      <div id="inProgress" class="task-column">
+        <h3>En Progreso</h3>
+        <div class="task-list"></div>
+      </div>
+      <div id="completed" class="task-column">
+        <h3>Completadas</h3>
+        <div class="task-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="taskModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="closeModal" onclick="cerrarModal()">&times;</span>
+      <h2 id="modalTitle">Agregar Tarea</h2>
+      <form id="taskForm">
+        <input type="text" id="taskNameModal" placeholder="Nombre de la tarea" required>
+        <textarea id="taskDescriptionModal" placeholder="Descripción"></textarea>
+        <input type="date" id="taskDueDateModal">
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
